@@ -1,0 +1,15 @@
+#IntelliJ
+.idea/
+*.iml
+
+#Eclipse
+*.classpath
+.externalToolBuilders/
+.metadata/
+*.project
+.settings/
+bin/
+
+#Maven
+target/
+files/*
