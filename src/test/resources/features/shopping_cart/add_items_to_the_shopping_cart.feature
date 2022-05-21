@@ -1,3 +1,4 @@
+@shopping_cart @add_items
 Feature: Add items to the shopping cart
   In order to purchase items
   As a customer
@@ -8,8 +9,7 @@ Feature: Add items to the shopping cart
 
   Rule: Items added via the catalog should be listed in the shopping cart
 
-    @current
-    Example: Chris adds items to his shopping cart
+    Example: The customer adds items to his shopping cart
       When he adds the following items to his shopping cart:
         | Sauce Labs Bolt T-Shirt  |
         | Sauce Labs Fleece Jacket |

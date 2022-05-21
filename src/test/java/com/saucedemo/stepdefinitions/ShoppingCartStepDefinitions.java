@@ -20,7 +20,7 @@ public class ShoppingCartStepDefinitions
     private List<String> addedItems;
     private List<String> removedItems;
 
-    @When("^he (?:adds|has added) the following items to his shopping cart:$")
+    @When("^(?:he|she) (?:adds|has added) the following items to his shopping cart:$")
     public void addItemsToShoppingCart(List<String> itemNames)
     {
         itemNames.forEach(itemName -> theActorInTheSpotlight().attemptsTo(AddToShoppingCart.item(itemName)));

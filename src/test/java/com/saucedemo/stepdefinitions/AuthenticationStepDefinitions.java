@@ -20,14 +20,14 @@ public class AuthenticationStepDefinitions
         actor.attemptsTo(NavigateTo.theLoginPage());
     }
 
-    @When("{actor} attempts to login with valid credentials")
-    public void login(Actor actor)
+    @When("he/she attempts to login with valid credentials")
+    public void loginWithValidCredentials()
     {
-        theActorInTheSpotlight().attemptsTo(LogIn.as(actor));
+        theActorInTheSpotlight().attemptsTo(LogIn.withValidCredentials());
     }
 
     @When("{actor} attempts to login with username {string} and password {string}")
-    public void login(Actor actor, String username, String password)
+    public void loginWithValidCredentials(Actor actor, String username, String password)
     {
         actor.attemptsTo(LogIn.withCredentials(username, password));
     }
@@ -36,7 +36,7 @@ public class AuthenticationStepDefinitions
     public void loggedInAs(Actor actor)
     {
         navigateToLoginPage(actor);
-        login(actor);
+        loginWithValidCredentials();
     }
 
     @Then("the catalog should be displayed")
@@ -45,10 +45,10 @@ public class AuthenticationStepDefinitions
         theActorInTheSpotlight().attemptsTo(Ensure.thatTheListOf(Catalog.ITEMS).isNotEmpty());
     }
 
-    @Then("{actor} is not logged in")
-    public void assertNotLoggedIn(Actor actor)
+    @Then("he/she is not logged in")
+    public void assertNotLoggedIn()
     {
-        actor.attemptsTo(Ensure.thatTheCurrentPage().currentUrl().isEqualTo(System.baseUrl()));
+        theActorInTheSpotlight().attemptsTo(Ensure.thatTheCurrentPage().currentUrl().isEqualTo(System.baseUrl()));
     }
 
     @Then("an error message {string} is displayed")

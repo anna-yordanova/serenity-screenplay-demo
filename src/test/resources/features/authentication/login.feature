@@ -1,3 +1,4 @@
+@login
 Feature: Log into Saucedemo online shop
   As a customer of Saucedemo online shop
   I want to be able to login
@@ -9,7 +10,7 @@ Feature: Log into Saucedemo online shop
       Given Chris is on the Login page
 
     Example: The customer provides valid credentials
-      When Chris attempts to login with valid credentials
+      When he attempts to login with valid credentials
       Then the catalog should be displayed
 
     Scenario Template: The customer provides invalid credentials
@@ -24,10 +25,10 @@ Feature: Log into Saucedemo online shop
         | some-username |                | Password is required                                        |
         |               | some-password  | Username is required                                        |
 
-    Rule: Customer with locked account cannot login
+  Rule: Customer with locked account cannot login
 
     Example: Login with user whose account is locked
       Given Lora is on the Login page
-      When Lora attempts to login with valid credentials
+      When she attempts to login with valid credentials
       Then she is not logged in
       And an error message "Sorry, this user has been locked out." is displayed
