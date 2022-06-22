@@ -2,7 +2,7 @@
 
 To run the tests locally execute `mvn clean verify`.
 #### To run the tests on Selenium grid:
-Execute `docker-compose up` in the project directory.
+Execute `docker-compose up -d` in the project directory.
 
 To access the grid console: `http://localhost:4444/grid/console`
 
@@ -14,6 +14,8 @@ localhost:<browser container port>
 Password: secret
 ```
 To execute the tests: `mvn clean verify -Denvironment=remote`.
+
+To stop the grid and cleanup the created containers run `docker-compose down`
 
 ## Run the tests with specific browser
 * Override the driver specified in the configuration file **serenity.conf** from the command line `mvn clean verify 
