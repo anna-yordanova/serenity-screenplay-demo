@@ -18,7 +18,7 @@ services:
       - "5900"
 
   firefox:
-    image: selenium/node-firefox-debug
+    image: selenium/node-firefox-debug:3.141.59
     container_name: firefox-browser
     shm_size: 2gb
     depends_on:
