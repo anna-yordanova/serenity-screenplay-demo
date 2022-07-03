@@ -6,7 +6,7 @@ Execute `docker-compose up -d` in the project directory.
 
 To access the grid console: `http://localhost:4444/grid/console`
 
-To check the browser container port: `docker ps`
+To check the browser container port: `docker-compose ps`
 
 To see the test execution open VNC server on:
 ```
