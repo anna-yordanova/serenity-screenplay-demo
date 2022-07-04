@@ -18,11 +18,15 @@ To execute the tests: `mvn clean verify -Denvironment=remote`.
 To stop the grid and cleanup the created containers run `docker-compose down`
 
 ## Run the tests with specific browser
-* Override the driver specified in the configuration file **serenity.conf** from the command line `mvn clean verify 
-  -Dwebdriver.driver=firefox`.
+Override the driver specified in **serenity.conf** file from the command line:
+* local environment: `mvn clean verify -D"webdriver.driver"=chrome`
+* remote environment: `mvn clean verify -Denvironment=remote -D"webdriver.remote.driver"=firefox`
 
-## Tests report
-Tests report could be found here: `/target/site/serenity/index.html`
+## Run specific tests
+To run specific tests use the available tags. For example `mvn clean verify -Dtags=remove_items`.
+
+## Test report
+Test report could be found here: `/target/site/serenity/index.html`
 
 Go to "Test Results" tab to see the results for each scenario.
 
