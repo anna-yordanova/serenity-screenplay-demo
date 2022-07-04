@@ -5,6 +5,7 @@ import com.saucedemo.questions.LoginErrorMessage;
 import com.saucedemo.tasks.LogIn;
 import com.saucedemo.tasks.NavigateTo;
 import com.saucedemo.ui.items_catalog.Catalog;
+
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.Actor;
@@ -39,7 +40,7 @@ public class AuthenticationStepDefinitions
         loginWithValidCredentials();
     }
 
-    @Then("the catalog should be displayed")
+    @Then("the catalog overview should be displayed")
     public void assertCatalogIsDisplayed()
     {
         theActorInTheSpotlight().attemptsTo(Ensure.thatTheListOf(Catalog.ITEMS).isNotEmpty());

@@ -5,6 +5,7 @@ import com.saucedemo.tasks.AddToShoppingCart;
 import com.saucedemo.tasks.NavigateTo;
 import com.saucedemo.tasks.RemoveItemViaCatalog;
 import com.saucedemo.tasks.RemoveItemViaShoppingCart;
+
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.Actor;
@@ -20,7 +21,7 @@ public class ShoppingCartStepDefinitions
     private List<String> addedItems;
     private List<String> removedItems;
 
-    @When("^(?:he|she) (?:adds|has added) the following items to his shopping cart:$")
+    @When("^(?:he|she) (?:chooses|has chosen) the following items:$")
     public void addItemsToShoppingCart(List<String> itemNames)
     {
         itemNames.forEach(itemName -> theActorInTheSpotlight().attemptsTo(AddToShoppingCart.item(itemName)));
@@ -41,7 +42,7 @@ public class ShoppingCartStepDefinitions
                 Ensure.that(ShoppingCart.items()).containsElementsFrom(expectedItems(addedItems, removedItems)));
     }
 
-    @When("{actor} removes the following item(s) via catalog")
+    @When("{actor} removes the following item(s) via catalog overview")
     public void removeItemFromCatalog(Actor actor, List<String> itemNames)
     {
         itemNames.forEach(itemName -> actor.attemptsTo(RemoveItemViaCatalog.named(itemName)));

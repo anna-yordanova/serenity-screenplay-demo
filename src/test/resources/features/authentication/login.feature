@@ -11,7 +11,7 @@ Feature: Log into Saucedemo online shop
 
     Example: The customer provides valid credentials
       When he attempts to login with valid credentials
-      Then the catalog should be displayed
+      Then the catalog overview should be displayed
 
     Scenario Template: The customer provides invalid credentials
       When Chris attempts to login with username "<username>" and password "<password>"
