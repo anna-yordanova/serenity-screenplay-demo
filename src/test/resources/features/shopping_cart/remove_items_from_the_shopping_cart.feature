@@ -1,6 +1,6 @@
 @shopping_cart @remove_items
 Feature: Remove items from the shopping cart
-  In order to be able to modify the items added to the shopping cart
+  In order to manage the shopping cart list of items
   As a customer
   I want to be able to remove items
 
