@@ -39,7 +39,7 @@ public class ShoppingCartStepDefinitions
     {
         theActorInTheSpotlight().attemptsTo(
                 NavigateTo.theShoppingCart(),
-                Ensure.that(ShoppingCart.items()).containsElementsFrom(expectedItems(addedItems, removedItems)));
+                Ensure.that(ShoppingCart.items()).containsExactlyElementsFrom(expectedItems(addedItems, removedItems)));
     }
 
     @When("{actor} removes the following item(s) via catalog overview")
